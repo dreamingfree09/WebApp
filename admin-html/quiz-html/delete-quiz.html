@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Quiz - Admin Dashboard</title>
+    <link rel="stylesheet" href="../../css/admin-style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="../admin-index.html" class="home-btn">Home</a>
+
+      <!-- Quiz Admin Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn">QUIZ</button>
+        <div class="dropdown-content">
+          <a href="create-quiz.html">Create Quiz</a>
+          <a href="read-quiz.html">View Quizzes</a>
+          <a href="update-quiz.html">Update Quiz</a>
+          <a href="delete-quiz.html">Delete Quiz</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <h1>Delete Quiz Question</h1>
+      <div class="delete-quiz">
+        <label for="deleteQuestion">Select Question to Delete:</label>
+        <select id="deleteQuestion" name="deleteQuestion">
+          <!-- Options will be dynamically populated -->
+          <option value="question1">Question 1</option>
+          <option value="question2">Question 2</option>
+          <!-- Add other questions -->
+        </select>
+        <button type="button" onclick="deleteQuestion()">Delete</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>Dashboard © 2023 Football Quiz</p>
+    </footer>
+
+    <script>
+      // JavaScript for dropdown
+      document.querySelectorAll(".dropdown-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.nextElementSibling.classList.toggle("show");
+        });
+      });
+
+      // Function to handle the delete action
+      function deleteQuestion() {
+        var selectedQuestion = document.getElementById("deleteQuestion").value;
+        // Here you would typically make an AJAX request to your server to delete the selected question
+        alert("Delete question: " + selectedQuestion); // This is just a placeholder for demonstration
+      }
+    </script>
+  </body>
+</html>

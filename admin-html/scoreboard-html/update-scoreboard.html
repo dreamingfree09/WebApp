@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Scoreboard - Admin Dashboard</title>
+    <link rel="stylesheet" href="../../css/admin-style.css" />
+    <!-- Ensure your additional CSS file complements admin-style.css -->
+    <link rel="stylesheet" type="text/css" href="your-css-file.css" />
+  </head>
+  <body class="update-scoreboard">
+    <div class="sidebar">
+      <a href="../admin-index.html" class="home-btn">Home</a>
+
+      <!-- Scoreboard Admin Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn">SCOREBOARD</button>
+        <div class="dropdown-content">
+          <a href="create-scoreboard.html">Create Scoreboard Entry</a>
+          <a href="read-scoreboard.html">View Scoreboard</a>
+          <a href="update-scoreboard.html">Update Scoreboard Entry</a>
+          <a href="delete-scoreboard.html">Delete Scoreboard Entry</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <h1>Update Scoreboard Entry</h1>
+      <form
+        action="path-to-server-side-script"
+        method="POST"
+        class="update-scoreboard-form"
+      >
+        <div class="form-group">
+          <label for="user">User:</label>
+          <input type="text" id="user" name="user" required />
+        </div>
+
+        <div class="form-group">
+          <label for="scoreboard">Scoreboard:</label>
+          <select id="scoreboard" name="scoreboard" required>
+            <!-- Options should be dynamically populated -->
+            <option value="">Select a Scoreboard</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="score">Score:</label>
+          <input type="number" id="score" name="score" required />
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <button type="submit" class="submit-button">Update</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>Dashboard © 2023 Football Quiz</p>
+    </footer>
+
+    <script>
+      // JavaScript for dropdown functionality
+      document.querySelectorAll(".dropdown-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.nextElementSibling.classList.toggle("show");
+        });
+      });
+
+      // Placeholder for potential JavaScript/AJAX for dynamic scoreboard selection
+      // Example: fetchScoreboardOptions();
+
+      // Placeholder for handling form submission
+      // Example: document.querySelector('.update-scoreboard-form').addEventListener('submit', handleFormSubmit);
+    </script>
+  </body>
+</html>

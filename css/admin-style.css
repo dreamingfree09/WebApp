@@ -1,0 +1,712 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
+:root {
+  --primary-color: #505550; /* Grey */
+  --secondary-color: #ffffff; /* White */
+  --accent-color: #504c4c; /* Grey */
+  --text-color: #5c5a5a; /* Dark gray */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+.sidebar {
+  width: 200px;
+  background-color: var(--primary-color);
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+}
+
+.sidebar .logo {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.home-btn,
+.dropdown-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.home-btn:hover,
+.dropdown-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #444;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: var(--secondary-color);
+  overflow: auto;
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--accent-color);
+}
+
+.show {
+  display: block;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 220px;
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.form-quiz {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="submit"] {
+  background-color: #004d99;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #003366;
+}
+
+/* Styles for Quiz Table */
+.quiz-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: auto;
+}
+
+.quiz-table th,
+.quiz-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.quiz-table th {
+  background-color: #004d99;
+  color: white;
+}
+
+.quiz-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.quiz-table tr:hover {
+  background-color: #ddd;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .quiz-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .quiz-table th,
+  .quiz-table td {
+    padding: 5px;
+    font-size: 0.9em;
+  }
+}
+
+/* Existing styles... */
+
+/* Additional styles for update-quiz.html */
+.select-question {
+  margin: 20px 0;
+}
+
+.select-question label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.select-question select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styles for Delete Quiz Page */
+.delete-quiz {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.delete-quiz label,
+.delete-quiz select {
+  margin-bottom: 15px;
+}
+
+.delete-quiz select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.delete-quiz button {
+  background-color: #d9534f; /* Red color for delete button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-quiz button:hover {
+  background-color: #c9302c; /* Darker shade of red for hover effect */
+}
+
+/* Styles for User Creation Form */
+.form-user {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-user .form-group {
+  margin-bottom: 15px;
+}
+
+.form-user label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-user input[type="text"],
+.form-user input[type="email"],
+.form-user input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-user input[type="submit"] {
+  background-color: #004d99;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-user input[type="submit"]:hover {
+  background-color: #003366;
+}
+
+/* Styles for User Table */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #004d99;
+  color: white;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.user-table tr:hover {
+  background-color: #ddd;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .user-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Additional styles for update-user.html */
+.update-user {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.update-user .form-group {
+  margin-bottom: 15px;
+}
+
+.update-user label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.update-user input[type="text"],
+.update-user input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.update-user input[type="submit"] {
+  background-color: #004d99;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update-user input[type="submit"]:hover {
+  background-color: #003366;
+}
+
+.delete-user {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.delete-user label,
+.delete-user select {
+  margin-bottom: 15px;
+}
+
+.delete-user select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.delete-user button {
+  background-color: #d9534f; /* Red color for delete button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-user button:hover {
+  background-color: #c9302c; /* Darker shade of red for hover effect */
+}
+
+/* CSS styles for the create-scoreboard page */
+
+.create-scoreboard body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.create-scoreboard .sidebar {
+  background-color: #f2f2f2;
+  width: 200px;
+  padding: 20px;
+}
+
+.create-scoreboard main {
+  padding: 20px;
+}
+
+.create-scoreboard h1 {
+  font-size: 24px;
+}
+
+.create-scoreboard .form-scoreboard {
+  margin-bottom: 20px;
+}
+
+.create-scoreboard .form-group {
+  margin-bottom: 10px;
+}
+
+.create-scoreboard label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.create-scoreboard input[type="text"],
+.create-scoreboard textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.create-scoreboard input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create-scoreboard input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.create-scoreboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.create-scoreboard th,
+.create-scoreboard td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.create-scoreboard th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.create-scoreboard tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.create-scoreboard tr:hover {
+  background-color: #e6e6e6;
+}
+
+.create-scoreboard .scoreboard-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-scoreboard .scoreboard-pagination a {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #333;
+}
+
+.create-scoreboard .scoreboard-pagination a.active {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.create-scoreboard .scoreboard-pagination a:hover {
+  background-color: #e6e6e6;
+}
+
+.create-scoreboard footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+
+/* css styles for the read-scoreboard page */
+
+.read-scoreboard body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.read-scoreboard .sidebar {
+  background-color: #f2f2f2;
+  width: 200px;
+  padding: 20px;
+}
+
+.read-scoreboard main {
+  padding: 20px;
+}
+
+.read-scoreboard h1 {
+  font-size: 24px;
+}
+
+.read-scoreboard .form-scoreboard {
+  margin-bottom: 20px;
+}
+
+.read-scoreboard .form-group {
+  margin-bottom: 10px;
+}
+
+.read-scoreboard label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.read-scoreboard input[type="text"],
+.read-scoreboard textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.read-scoreboard input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.read-scoreboard input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.read-scoreboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.read-scoreboard th,
+.read-scoreboard td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.read-scoreboard th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.read-scoreboard tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.read-scoreboard tr:hover {
+  background-color: #e6e6e6;
+}
+
+.read-scoreboard .scoreboard-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.read-scoreboard .scoreboard-pagination a {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #333;
+}
+
+.read-scoreboard .scoreboard-pagination a.active {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.read-scoreboard .scoreboard-pagination a:hover {
+  background-color: #e6e6e6;
+}
+
+.read-scoreboard footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Additional Styles for Update Scoreboard Page */
+
+.update-scoreboard .form-group {
+  margin-bottom: 20px;
+}
+
+.update-scoreboard .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.update-scoreboard .form-group input[type="text"],
+.update-scoreboard .form-group input[type="number"],
+.update-scoreboard .form-group input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.update-scoreboard .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.update-scoreboard .submit-button {
+  background-color: #4caf50; /* Green color for update button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.update-scoreboard .submit-button:hover {
+  background-color: #45a049; /* Darker shade of green for hover effect */
+}
+
+/* Responsive adjustments for update page if needed */
+@media screen and (max-width: 768px) {
+  /* Add responsive styles for update page here */
+}
+
+/* General styles for delete-scoreboard page */
+
+.delete-scoreboard .delete-button {
+  background-color: #d9534f; /* Red color for delete button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.delete-scoreboard .delete-button:hover {
+  background-color: #c9302c; /* Darker shade of red for hover effect */
+}
+
+/* Additional specific styles for form elements */
+.delete-scoreboard .form-group {
+  margin-bottom: 20px;
+}
+
+.delete-scoreboard select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments for delete page if needed */
+@media screen and (max-width: 768px) {
+  /* Add responsive styles for delete page here */
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--primary-color);
+  padding: 10px;
+  text-align: center;
+}

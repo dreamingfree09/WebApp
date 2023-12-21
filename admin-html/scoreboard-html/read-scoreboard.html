@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read Scoreboard - Admin Dashboard</title>
+    <link rel="stylesheet" href="../../css/admin-style.css" />
+    <link rel="stylesheet" type="text/css" href="your-css-file.css" />
+  </head>
+  <body class="read-scoreboard">
+    <div class="sidebar">
+      <a href="../admin-index.html" class="home-btn">Home</a>
+      <!-- User Admin Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn">SCOREBOARD</button>
+        <div class="dropdown-content">
+          <a href="readcreate-scoreboard.html">Create User</a>
+          <a href="read-scoreboard.html">View Users</a>
+          <a href="update-scoreboard.html">Update User</a>
+          <a href="delete-scoreboard.html">Delete User</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <h1>Scoreboard List</h1>
+      <table class="scoreboard-table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>95</td>
+            <td>2023-06-15</td>
+          </tr>
+          <!-- Add more rows for other users -->
+        </tbody>
+      </table>
+
+      <div class="scoreboard-pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <!-- Add more pagination links -->
+      </div>
+    </main>
+
+    <footer>
+      <p>Dashboard © 2023 Football Quiz</p>
+    </footer>
+
+    <script>
+      // JavaScript for dropdown
+      document.querySelectorAll(".dropdown-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.nextElementSibling.classList.toggle("show");
+        });
+      });
+    </script>
+  </body>
+</html>
