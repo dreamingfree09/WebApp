@@ -3,7 +3,7 @@
   --primary-color: #1b1d1f;
   --secondary-color: #333;
   --text-color: #fff;
-  --background-color: #efefe9;
+  --background-color: #e4e4d5;
   --accent-color: #ddd;
   --blue-color: #3f3fb5; /* Define or replace var(--blue-color) */
   --green-color: #00ff00; /* Define or replace var(--green-color) */
@@ -275,9 +275,101 @@ main section {
   /* Add more styles as per your design for the quiz page */
 }
 
-.quiz-page .quiz-container {
-  /* Your custom styles */
+/* Quiz Container Specific Styles */
+.quiz-container {
+  background-color: var(--table-row-color); /* Light background for the quiz */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--box-shadow-rgba-color);
+  margin: 20px auto; /* Centering the quiz container */
+  width: 80%;
+  max-width: 600px; /* Adjust width as needed */
 }
+
+/* Question Styles */
+.question-container {
+  background-color: var(--background-color);
+  border: 1px solid var(--accent-color);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.question-container h3 {
+  text-align: right; /* Align question text to the right */
+  color: var(--primary-color);
+  margin-bottom: 10px; /* Adjust spacing below the question */
+}
+
+/* Question Container Styles */
+.question-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question-container li {
+  margin-bottom: 10px; /* Space between each option */
+  text-align: left; /* Align the options to the left */
+}
+
+/* Style adjustments for radio buttons and labels */
+.question-container input[type="radio"] {
+  margin-right: 10px; /* Space between radio button and label */
+}
+
+.question-container label {
+  cursor: pointer; /* Pointer cursor for better UX */
+}
+
+/* Timer Styles */
+#timer {
+  font-size: 16px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Next Question Button Styles */
+#nextQuestion {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+#nextQuestion:hover {
+  background-color: var(--button-hover-color);
+}
+
+/* Results Display Styles */
+.quiz-results {
+  padding: 20px;
+  text-align: center;
+}
+
+.quiz-results h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.quiz-results p {
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+/* Responsive Design for Quiz */
+@media screen and (max-width: 768px) {
+  .quiz-container {
+    width: 95%;
+    padding: 10px;
+  }
+}
+
 /* Button Styles */
 button,
 .quiz-container .quiz-button,
