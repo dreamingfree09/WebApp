@@ -1,27 +1,134 @@
+/* Root Definitions */
+:root {
+  --primary-color: #1b1d1f;
+  --secondary-color: #333;
+  --text-color: #fff;
+  --background-color: #efefe9;
+  --accent-color: #ddd;
+  --blue-color: #3f3fb5; /* Define or replace var(--blue-color) */
+  --green-color: #00ff00; /* Define or replace var(--green-color) */
+  --link-color: var(--blue-color);
+  --button-color: #8fad90;
+  --button-hover-color: #839e85;
+  --table-header-color: #406d99;
+  --table-row-color: rgba(255, 255, 255, 0.9);
+  --box-shadow-rgba-color: rgba(27, 29, 31, 0.1);
+  --login-button-color: var(--green-color);
+  --login-button-hover-color: #369456;
+  --signup-link-color: var(--blue-color);
+  --register-button-color: var(--green-color);
+  --register-button-hover-color: #369456;
+  --carousel-button-color: var(--green-color);
+  --carousel-button-hover-color: #369456;
+  --font-family: "Roboto", sans-serif;
+}
+
+/* Button Styles */
+.button {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+  background-color: var(--button-hover-color);
+  transform: scale(1.1);
+}
+
+/* Button Usage */
+button,
+.quiz-container .quiz-button,
+#startQuiz,
+.login-button,
+.signup-button,
+.register-button {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: var(--background-color);
+  flex: 1;
+}
+
+main section {
+  flex: 0 0 calc(33% - 2.5em);
+  margin: 1.25em;
+  padding: 1.25em;
+  box-shadow: 0 0.125em 0.3125em var(--box-shadow-rgba-color);
+  border-radius: 0.5em;
+  background-color: var(--background-color);
+}
+
+/* Specific Styles for Quiz Page Buttons */
+#startQuiz,
+#nextQuestion,
+#submitQuiz {
+  background-color: transparent;
+  color: var(--text-color); /* Adjust the color as needed */
+  border: 2px solid var(--text-color); /* Adjust border color as needed */
+  margin: 10px; /* Adjust the margin as needed for spacing */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#startQuiz:hover,
+#nextQuestion:hover,
+#submitQuiz:hover {
+  background-color: var(
+    --button-hover-color
+  ); /* Adjust hover color as needed */
+  color: var(--background-color); /* Adjust text color on hover if needed */
+}
+
+/* Start Quiz Button Specific Style */
+#startQuiz {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  margin: 70px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#startQuiz:hover {
+  background-color: var(--button-hover-color);
+  color: var(--background-color);
+}
+
 /* General Styles */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-body {
+  font-family: var(--font-family);
   display: flex;
-  flex-direction: column; /* Stack header, main, and footer vertically */
+  flex-direction: column;
   min-height: 100vh;
 }
 
 header {
-  background-color: #1b1d1f;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   padding: 10px 0;
   text-align: center;
 }
 
+/* Navigation Styles */
 nav {
-  background-color: #333;
+  background-color: var(--secondary-color);
   overflow: hidden;
 }
 
@@ -35,67 +142,109 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 15px; /* Adds horizontal space between menu items */
+  margin: 0 15px;
 }
+
 nav ul li a {
   display: block;
-  color: white;
+  color: var(--text-color);
   text-align: center;
-  padding: 10px 15px; /* Adds padding to increase the clickable area */
+  padding: 10px 15px;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-  background-color: #ddd;
+  background-color: var(--accent-color);
   color: black;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Stack menu items vertically on smaller screens */
-  }
-
-  nav ul li {
-    margin: 10px 0; /* Adjust margin for vertical layout */
-  }
-}
-
+/* Footer Styles */
 footer {
-  background-color: #333;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   text-align: center;
   padding: 10px 0;
 }
 
+/* Main Content Styles */
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 15px;
-  background-color: #f4f4f4;
+  background-color: var(--background-color);
   flex: 1;
 }
 
 main section {
-  width: calc(33% - 40px); /* Adjust width as desired, accounting for margin */
-  margin: 20px; /* Spacing between sections */
+  width: calc(33% - 40px);
+  margin: 20px;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px var(--box-shadow-color);
   border-radius: 8px;
-  background-color: #ffffff;
+  background-color: var(--background-color);
+}
+
+/* Quiz Container Styles */
+.quiz-page .quiz-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-content .question {
+  margin-bottom: 20px;
+}
+
+.answer-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.answer-button:hover {
+  background-color: #0056b3;
+}
+
+.next-question-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.next-question-button:hover {
+  background-color: #1e7e34;
+}
+
+.timer {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 .quiz-container {
-  width: 80%; /* Adjust width as necessary */
-  max-width: 500px; /* Or any max-width you prefer */
+  width: 80%;
+  max-width: 500px;
   text-align: center;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px var(--box-shadow-color);
   border-radius: 8px;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   background-image: url("/img/stadium.png");
   background-size: cover;
   background-position: center;
@@ -106,187 +255,70 @@ main section {
   z-index: 2;
 }
 
-/* Adjust button styles if needed */
-button {
-  padding: 10px 15px;
-  margin-top: 15px;
+.quiz-container #startQuiz {
+  background-color: transparent;
+  color: var(--text-color); /* Ensure --text-color is defined */
+  border: 2px solid var(--text-color); /* Ensure --text-color is defined */
+  margin: 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  main {
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1; /* Expand main to fill available space, pushing the footer down */
-    display: flex; /* Enable Flexbox for main */
-    flex-wrap: wrap; /* Allow items to wrap as needed */
-    justify-content: space-around; /* Space out sections evenly */
-    padding: 20px;
-  }
-
-  main section {
-    width: calc(
-      33% - 40px
-    ); /* Adjust width as desired, accounting for margin */
-    margin: 20px; /* Spacing between sections */
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: #ffffff;
-  }
-
-  main section h2 {
-    color: #004d99;
-    margin-bottom: 15px;
-  }
-
-  main section p {
-    line-height: 1.6;
-  }
+.quiz-container #startQuiz:hover {
+  background-color: var(
+    --button-hover-color
+  ); /* Ensure --button-hover-color is defined */
+  color: var(--background-color); /* Ensure --background-color is defined */
 }
 
-/* Style for the Start Quiz button */
-#startQuiz {
-  font-size: 18px; /* Larger font size */
-  padding: 15px 30px; /* Larger button padding */
-  background-color: #8fad90; /* Background color */
-  color: white; /* Text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  margin-top: 30px; /* More space above the button */
-  cursor: pointer; /* Cursor changes to pointer to indicate clickable */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+.quiz-page .quiz-container {
+  background-image: none; /* This removes the background image */
+  /* Add more styles as per your design for the quiz page */
 }
 
-#startQuiz:hover {
-  background-color: #839e85; /* Slightly darker shade on hover */
-  transform: scale(1.05); /* Slightly larger scale on hover */
+.quiz-page .quiz-container {
+  /* Your custom styles */
 }
-
-#startQuiz:focus {
-  outline: none; /* Remove outline to keep the design clean */
-}
-
-.scoreboard-container {
-  max-width: 1000px; /* Increase the width */
-  margin: 20px auto; /* Centering the container */
-  padding: 20px;
-  background: url("path/to/your/texture.png"); /* Path to your texture image */
-  background-size: cover; /* Ensure the texture covers the entire container */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Slightly transparent white background */
-}
-
-th,
-td {
-  padding: 15px; /* Increase padding for a more spacious look */
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #004d99;
-  color: #fff;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .scoreboard-container {
-    width: 95%; /* Adjust width for smaller screens */
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-  }
-}
-
-/* Login Form Styles */
-.login-container {
-  max-width: 400px; /* Set a max-width for the login container */
-  margin: 30px auto; /* Center it on the page with some margin */
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.login-form h2 {
-  margin-bottom: 20px;
-  color: #004d99;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  margin-bottom: 5px;
-  text-align: left;
-  display: block;
-}
-
-.form-group input[type="text"],
-.form-group input[type="password"] {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.login-button {
-  background-color: #4caf50;
+/* Button Styles */
+button,
+.quiz-container .quiz-button,
+#startQuiz,
+.login-button,
+.register-button {
+  background-color: var(--button-color);
   color: white;
   border: none;
   padding: 10px 15px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.login-button:hover {
-  background-color: #369456;
+button:hover,
+#startQuiz:hover,
+.login-button:hover,
+.register-button:hover {
+  background-color: var(--button-hover-color);
+  transform: scale(1.1);
 }
 
-.signup-link {
-  margin-top: 15px;
-  font-size: 0.9em;
+/* Form Styles */
+form button[type="submit"] {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.signup-link a {
-  color: #004d99;
-  text-decoration: none;
+form button[type="submit"]:hover {
+  background-color: var(--button-hover-color);
+  transform: scale(1.1);
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .login-container {
-    width: 95%;
-    margin-top: 15px;
-  }
-}
-
-/* Registration Form Styles */
+/* Login and Registration Form Styles */
+.login-container,
 .registration-container {
   max-width: 400px;
   margin: 30px auto;
@@ -297,15 +329,17 @@ th {
   text-align: center;
 }
 
+.login-form,
 .registration-form {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
+.login-form h2,
 .registration-form h2 {
   margin-bottom: 20px;
-  color: #004d99;
+  color: var(--link-color);
 }
 
 .form-group {
@@ -319,53 +353,34 @@ th {
 }
 
 .form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="password"] {
+.form-group input[type="password"],
+.form-group input[type="email"] {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-.register-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.register-button:hover {
-  background-color: #369456;
-}
-
+.signup-link,
 .login-link {
   margin-top: 15px;
   font-size: 0.9em;
 }
 
+.signup-link a,
 .login-link a {
-  color: #004d99;
+  color: var(--link-color);
   text-decoration: none;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .registration-container {
-    width: 95%;
-    margin-top: 15px;
-  }
-}
-
+/* Carousel Styles */
 .carousel {
   position: relative;
-  max-width: 600px; /* Adjust the maximum width as needed */
+  max-width: 600px;
   margin: auto;
-  overflow: hidden; /* Ensures anything outside the container isn't shown */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
-  border-radius: 8px; /* Optional: rounds the corners */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 #dynamicContent {
@@ -374,7 +389,7 @@ th {
 }
 
 #dynamicContent button {
-  background-color: #4caf50;
+  background-color: var(--carousel-button-color);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -383,40 +398,95 @@ th {
 }
 
 #dynamicContent button:hover {
-  background-color: #369456;
+  background-color: var(--carousel-button-hover-color);
 }
 
 .carousel-image {
-  width: 100%; /* Ensures all images take up the same width */
-  max-height: 350px; /* Adjust the max-height as needed */
-  object-fit: cover; /* This will ensure the image covers the area without stretching */
-  display: none; /* Hide all images initially */
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  display: none;
 }
 
-/* Show the first image in the carousel by default */
 .carousel-image:first-child {
   display: block;
 }
 
-.carousel button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+/* Scoreboard Styles */
+.scoreboard-wrapper {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Allow items to wrap */
+  gap: 5px; /* Space between containers */
 }
 
-.carousel button:first-child {
-  left: 10px;
+.scoreboard-container {
+  flex: 1; /* Each container will grow to fill the space */
+  max-width: 30%; /* Maximum width of each container */
+  min-width: 250px; /* Minimum width to maintain readability */
+  box-shadow: 0 4px 8px var(--box-shadow-rgba-color);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: var(--background-color);
 }
 
-.carousel button:last-child {
-  right: 10px;
+.scoreboard-container h2 {
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-#moreInfo {
-  margin-top: 15px;
+.scoreboard-container:last-of-type {
+  border-bottom: none; /* No border for the last container */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
   text-align: left;
-  visibility: hidden;
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-  transition: opacity 0.5s, height 0.5s, margin-top 0.5s;
-  /* Additional styling as needed */
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+th {
+  background-color: var(--table-header-color);
+  color: var(--text-color);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--table-row-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .scoreboard-container,
+  .login-container,
+  .registration-container {
+    width: 95%;
+    padding: 10px;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .scoreboard-wrapper {
+    flex-direction: column;
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+  }
 }

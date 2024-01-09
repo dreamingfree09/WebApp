@@ -2,7 +2,13 @@
 <html>
   <head>
     <title>Home Page</title>
-    <link rel="stylesheet" href="../css/home-style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Football Quiz is a fun and interactive way to test your knowledge of football."
+    />
+    <link rel="stylesheet" href="/css/home-style.css" />
   </head>
   <body>
     <header>
@@ -11,7 +17,9 @@
         <ul>
           <li><a href="Home-index.html">Home</a></li>
           <li><a href="./main-quiz-html/Quiz.html">Take the Quiz</a></li>
-          <li><a href="./main-quiz-html/Scoreboard.html">View the Scoreboard</a></li>
+          <li>
+            <a href="./main-quiz-html/Scoreboard.html">View the Scoreboard</a>
+          </li>
           <li><a href="./main-quiz-html/Login.html">Log In</a></li>
           <li><a href="./main-quiz-html/Register.html">Register</a></li>
         </ul>
@@ -27,46 +35,9 @@
           matches.
         </p>
       </section>
-        </div>
-        <div id="imageCarousel" class="carousel">
-          <img
-            src="/img/player1.png"
-            alt="Player 1"
-            class="carousel-image"
-            style="display: none"
-          />
-          <img
-            src="/img/player2.png"
-            alt="Player 2"
-            class="carousel-image"
-            style="display: none"
-          />
-          <img
-            src="/img/player3.png"
-            alt="Player 3"
-            class="carousel-image"
-            style="display: none"
-          />
-          <img
-            src="/img/player4.png"
-            alt="Player 4"
-            class="carousel-image"
-            style="display: none"
-          />
-          <img
-            src="/img/player5.png"
-            alt="Player 5"
-            class="carousel-image"
-            style="display: none"
-          />
-          <img
-            src="/img/player6.png"
-            alt="Player 6"
-            class="carousel-image"
-            style="display: none"
-          />
-        </div>
-      </div>
+      <figure id="imageCarousel" class="carousel">
+        <figcaption>Football is my life</figcaption>
+      </figure>
       <section>
         <h2>How to Play</h2>
         <p>
@@ -77,7 +48,6 @@
           score and the correct answers to the questions.
         </p>
       </section>
-
       <section>
         <h2>About Us</h2>
         <p>
@@ -89,8 +59,32 @@
       </section>
     </main>
     <footer>
-      <p>© 2023 Football Quiz</p>
+      <p>© <span id="currentYear"></span> Football Quiz</p>
+      <script>
+        document.getElementById("currentYear").textContent =
+          new Date().getFullYear();
+      </script>
     </footer>
-    <script src="../js/home-script.js"></script>
+    <script src="/js/home-script.js"></script>
+    <script>
+      const carouselImages = [
+        { src: "/img/player1.png", alt: "Player 1" },
+        { src: "/img/player2.png", alt: "Player 2" },
+        { src: "/img/player3.png", alt: "Player 3" },
+        { src: "/img/player4.png", alt: "Player 4" },
+        { src: "/img/player5.png", alt: "Player 5" },
+        { src: "/img/player6.png", alt: "Player 6" },
+      ];
+
+      const imageCarousel = document.getElementById("imageCarousel");
+
+      carouselImages.forEach((image) => {
+        const imgElement = document.createElement("img");
+        imgElement.src = image.src;
+        imgElement.alt = image.alt;
+        imgElement.classList.add("carousel-image");
+        imageCarousel.appendChild(imgElement);
+      });
+    </script>
   </body>
 </html>
