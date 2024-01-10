@@ -37,23 +37,8 @@
     </main>
 
     <footer>
-      <p>Dashboard © 2023 Football Quiz</p>
+      <p>© <span id="currentYear"></span> Football Quiz</p>
     </footer>
-
-    <script>
-      // JavaScript for dropdown
-      document.querySelectorAll(".dropdown-btn").forEach((button) => {
-        button.addEventListener("click", function () {
-          this.nextElementSibling.classList.toggle("show");
-        });
-      });
-
-      // Function to handle the delete action
-      function deleteQuestion() {
-        var selectedQuestion = document.getElementById("deleteQuestion").value;
-        // Here you would typically make an AJAX request to your server to delete the selected question
-        alert("Delete question: " + selectedQuestion); // This is just a placeholder for demonstration
-      }
-    </script>
+    <script src="/js/admin-script.js"></script>
   </body>
 </html>

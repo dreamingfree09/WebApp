@@ -60,31 +60,7 @@
     </main>
     <footer>
       <p>© <span id="currentYear"></span> Football Quiz</p>
-      <script>
-        document.getElementById("currentYear").textContent =
-          new Date().getFullYear();
-      </script>
     </footer>
     <script src="/js/home-script.js"></script>
-    <script>
-      const carouselImages = [
-        { src: "/img/player1.png", alt: "Player 1" },
-        { src: "/img/player2.png", alt: "Player 2" },
-        { src: "/img/player3.png", alt: "Player 3" },
-        { src: "/img/player4.png", alt: "Player 4" },
-        { src: "/img/player5.png", alt: "Player 5" },
-        { src: "/img/player6.png", alt: "Player 6" },
-      ];
-
-      const imageCarousel = document.getElementById("imageCarousel");
-
-      carouselImages.forEach((image) => {
-        const imgElement = document.createElement("img");
-        imgElement.src = image.src;
-        imgElement.alt = image.alt;
-        imgElement.classList.add("carousel-image");
-        imageCarousel.appendChild(imgElement);
-      });
-    </script>
   </body>
 </html>

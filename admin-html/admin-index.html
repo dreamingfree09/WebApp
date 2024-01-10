@@ -54,18 +54,9 @@
       <h1>Dashboard</h1>
       <!-- Main content goes here -->
     </main>
-
     <footer>
-      <p>Dashboard © 2023 Football Quiz</p>
+      <p>© <span id="currentYear"></span> Football Quiz</p>
     </footer>
-
-    <script>
-      // JavaScript for dropdown
-      document.querySelectorAll(".dropdown-btn").forEach((button) => {
-        button.addEventListener("click", function () {
-          this.nextElementSibling.classList.toggle("show");
-        });
-      });
-    </script>
+    <script src="/js/admin-script.js"></script>
   </body>
 </html>

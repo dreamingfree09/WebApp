@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delete Scoreboard Entry - Admin Dashboard</title>
     <link rel="stylesheet" href="../../css/admin-style.css" />
-    <!-- Additional CSS file if needed -->
   </head>
   <body class="delete-scoreboard">
     <div class="sidebar">
       <a href="../admin-index.html" class="home-btn">Home</a>
-      <!-- Scoreboard Admin Dropdown -->
       <div class="dropdown">
         <button class="dropdown-btn">SCOREBOARD</button>
         <div class="dropdown-content">
           <a href="create-scoreboard.html">Create Scoreboard Entry</a>
-          <a href="read-scoreboard.html">View Scoreboard</a>
+          <a href="read-scoreboard.html">View Scoreboard Entry</a>
           <a href="update-scoreboard.html">Update Scoreboard Entry</a>
           <a href="delete-scoreboard.html">Delete Scoreboard Entry</a>
         </div>
@@ -42,22 +40,8 @@
     </main>
 
     <footer>
-      <p>Dashboard © 2023 Football Quiz</p>
+      <p>© <span id="currentYear"></span> Football Quiz</p>
     </footer>
-
-    <script>
-      // JavaScript for dropdown functionality
-      document.querySelectorAll(".dropdown-btn").forEach((button) => {
-        button.addEventListener("click", function () {
-          this.nextElementSibling.classList.toggle("show");
-        });
-      });
-
-      // Placeholder for potential JavaScript/AJAX for dynamic scoreboard selection
-      // Example: fetchScoreboardOptions();
-
-      // Placeholder for handling form submission
-      // Example: document.querySelector('.delete-scoreboard-form').addEventListener('submit', handleFormSubmit);
-    </script>
+    <script src="/js/admin-script.js"></script>
   </body>
 </html>

@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Read Scoreboard - Admin Dashboard</title>
     <link rel="stylesheet" href="../../css/admin-style.css" />
-    <link rel="stylesheet" type="text/css" href="your-css-file.css" />
   </head>
   <body class="read-scoreboard">
     <div class="sidebar">
       <a href="../admin-index.html" class="home-btn">Home</a>
-      <!-- User Admin Dropdown -->
       <div class="dropdown">
         <button class="dropdown-btn">SCOREBOARD</button>
         <div class="dropdown-content">
-          <a href="readcreate-scoreboard.html">Create User</a>
-          <a href="read-scoreboard.html">View Users</a>
-          <a href="update-scoreboard.html">Update User</a>
-          <a href="delete-scoreboard.html">Delete User</a>
+          <a href="create-scoreboard.html">Create scoreboard</a>
+          <a href="read-scoreboard.html">View scoreboard</a>
+          <a href="update-scoreboard.html">Update scoreboard</a>
+          <a href="delete-scoreboard.html">Delete scoreboard</a>
         </div>
       </div>
     </div>
-
     <main>
       <h1>Scoreboard List</h1>
       <table class="scoreboard-table">
@@ -43,24 +40,13 @@
       </table>
 
       <div class="scoreboard-pagination">
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <!-- Add more pagination links -->
+        <!-- Generate pagination links dynamically based on the number of scoreboard entries -->
       </div>
     </main>
 
     <footer>
-      <p>Dashboard © 2023 Football Quiz</p>
+      <p>© <span id="currentYear"></span> Football Quiz</p>
     </footer>
-
-    <script>
-      // JavaScript for dropdown
-      document.querySelectorAll(".dropdown-btn").forEach((button) => {
-        button.addEventListener("click", function () {
-          this.nextElementSibling.classList.toggle("show");
-        });
-      });
-    </script>
+    <script src="/js/admin-script.js"></script>
   </body>
 </html>

@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    // Set the current year in the footer
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Initialize carousel images
+    const carouselImages = [
+        { src: "/img/player1.png", alt: "Player 1" },
+        { src: "/img/player2.png", alt: "Player 2" },
+        { src: "/img/player3.png", alt: "Player 3" },
+        { src: "/img/player4.png", alt: "Player 4" },
+        { src: "/img/player5.png", alt: "Player 5" },
+        { src: "/img/player6.png", alt: "Player 6" },
+    ];
+
+    const imageCarousel = document.getElementById("imageCarousel");
+
+    // Add images to the carousel
+    carouselImages.forEach((image) => {
+        const imgElement = document.createElement("img");
+        imgElement.src = image.src;
+        imgElement.alt = image.alt;
+        imgElement.classList.add("carousel-image");
+        imageCarousel.appendChild(imgElement);
+    });
+
+    // Define changeImage function
     let currentImageIndex = 0;
     let images = document.querySelectorAll('.carousel-image');
 
@@ -15,9 +40,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         images[currentImageIndex].style.display = 'block';
     }
 
+    // Set up interval to change image
     setInterval(() => {
         changeImage(1);
     }, 3000); // Change image every 3000 milliseconds (3 seconds)
+});
+
 
     const quizQuestions = [
     {
@@ -100,9 +128,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 ];
 
-
-
-
 // Shuffle and select 10 random questions with shuffled options
     function selectRandomQuestions(questions, count) {
     shuffleArray(questions);
@@ -155,8 +180,6 @@ function createQuestionHtml(question) {
     return htmlContent;
 }
 
-
-
     window.enableNextButton = function() {
         document.getElementById('nextQuestion').disabled = false;
     };
@@ -173,8 +196,6 @@ window.answerSelected = function(selectedOptionIndex, questionId) {
     }
     enableNextButton();
 };
-
-
 
 
     function startTimer() {
@@ -232,4 +253,4 @@ window.answerSelected = function(selectedOptionIndex, questionId) {
             goToNextQuestion();
         }
     });
-});
+;
