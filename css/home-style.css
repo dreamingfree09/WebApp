@@ -582,3 +582,12 @@ tbody tr:nth-child(even) {
     overflow-x: auto;
   }
 }
+.correct-answer {
+  background-color: #28a745; /* Green for correct */
+  color: white;
+}
+
+.wrong-answer {
+  background-color: #dc3545; /* Red for incorrect */
+  color: white;
+}
