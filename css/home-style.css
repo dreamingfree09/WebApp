@@ -245,7 +245,7 @@ main section {
   box-shadow: 0 2px 5px var(--box-shadow-color);
   border-radius: 8px;
   background-color: var(--background-color);
-  background-image: url("/img/stadium.png");
+  background-image: url("../img/stadium.png");
   background-size: cover;
   background-position: center;
 }
