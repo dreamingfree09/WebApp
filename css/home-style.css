@@ -245,7 +245,7 @@ main section {
   box-shadow: 0 2px 5px var(--box-shadow-color);
   border-radius: 8px;
   background-color: var(--background-color);
-  background-image: url("/img/stadium.png");
+  background-image: url("../img/stadium.png");
   background-size: cover;
   background-position: center;
 }
@@ -284,6 +284,14 @@ main section {
   margin: 20px auto; /* Centering the quiz container */
   width: 80%;
   max-width: 600px; /* Adjust width as needed */
+}
+
+.quiz-results {
+  background-color: var(--background-color);
+  border: 1px solid var(--accent-color);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 /* Question Styles */
