@@ -1,0 +1,281 @@
+/* adminstyle.css */
+
+.bodyLogin {
+    font-family: Arial, sans-serif;
+    background-color: #bbe4f8; /* Light blue background */
+    display: block;
+    text-align: center;
+}
+
+.mainLogin {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+#loginForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+#loginForm h2 {
+    color: #007bff; /* Blue color for the heading */
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #333333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; 
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+}
+
+.password-container {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 20px);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 12px);
+    cursor: pointer;
+    color: #007bff;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.main-body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #bbe4f8; /* Light blue background */
+}
+
+nav {
+    flex-basis: 10%;
+    height: 100vh; /* Full height */
+    color: white;
+    padding: 15px 0px 15px 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    justify-content: end;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    background-color: #007bff;
+    border: 1px solid #023f80;
+}
+
+nav ul li a.currentPage {
+    background-color:white;
+       color: #0056b3;
+       border-right-color: white;
+}
+
+#menuButton {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #0056b3;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+main {
+    flex-basis: 90%;
+    padding: 20px;
+    background-color: white;
+}
+
+.questionContainer {
+    background-color: #bbe4f8;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.questionId, .question, .questionOptions, .questionAnswer, .questionExplanation {
+    margin-bottom: 10px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    nav ul {
+        display: none;
+    }
+
+    #menuButton {
+        display: block;
+    }
+
+    body {
+        flex-direction: column;
+    }
+
+    nav {
+        width: 20%;
+        height: auto;
+        align-self: flex-start;
+    }
+
+    main {
+        width: 100%;
+    }
+    nav ul li a.currentPage {
+        background-color:white;
+           color: #0056b3;
+           border-right-color: #023f80;
+    }
+    nav ul li a {
+        padding: 10px;  
+    }
+}
+/* Combined styles for both Update and Insert forms */
+#updateQuestionForm, #insertQuestionForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+#updateQuestionForm label, #insertQuestionForm label {
+    display: block;
+    margin-top: 15px;
+    color: #333333;
+}
+
+#updateQuestionForm input[type="text"],
+#updateQuestionForm input[type="number"],
+#updateQuestionForm textarea,
+#insertQuestionForm input[type="text"],
+#insertQuestionForm input[type="number"],
+#insertQuestionForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#updateQuestionForm input[type="submit"],
+#insertQuestionForm input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#updateQuestionForm input[type="submit"]:hover,
+#insertQuestionForm input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* Search Container Styles */
+#searchContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchContainer label, 
+#searchContainer input[type="number"], 
+#searchContainer button {
+    display: inline-block; /* Align elements in a line */
+    vertical-align: middle; /* Align elements vertically */
+    margin-right: 10px; /* Add some spacing between elements */
+}
+
+#searchContainer input[type="number"] {
+    width: auto; /* Allow the input to size naturally */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#searchButton, #LogoutButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#searchButton:hover ,#LogoutButton:hover{
+    background-color: #0056b3;
+}
+#deleteButton {
+    width: 100%; 
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color:#0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#deleteButton:hover {
+    background-color: #c9302c; 
+}
