@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECG-Quiz Admin Page - Delete Questions</title>
+    <link rel="stylesheet" type="text/css" href="../css/adminstyle.css">
+</head>
+<body>
+    <div class="main-body">
+    <nav>
+        <div id="menuButton">&#9776;</div> <!-- Menu Button -->
+        <ul id="navList">
+          <li><a  href="view.html">View Questions</a></li>
+          <li><a href="update.html">Update Questions</a></li>
+          <li><a href="insert.html">Insert Questions</a></li>
+          <li><a class="currentPage"href="delete.html">Delete Questions</a></li>
+        </ul>
+      </nav>
+    <main>   
+        <div id="searchContainer">
+            <label for="searchQuestionId">Enter question ID:</label>
+            <input type="number" id="searchQuestionId">
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="questionContainer" class="questionContainer">
+        </div>
+        <button id="deleteButton" style="display: none;">Delete Question</button>
+
+    </main>
+    </div>
+        <footer>
+    <p>&copy; 2024 ECG Quiz. All rights reserved.</p>
+</footer>
+<script src="../js/deletejs.js"></script>
+</body>
+</html>  
