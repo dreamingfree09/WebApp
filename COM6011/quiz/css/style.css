@@ -1,0 +1,541 @@
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #555;
+  }
+  body.indexPage{
+    background-color: black;
+  }
+  
+  main{
+    flex:1;/* Causes the main content to expand and fill the available space */
+    margin: 0 15px 0 15px ;
+    border-style:solid;
+    border-color: #333;
+    background-color: white;
+
+  }
+  #videoContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;  /* Increased size for initial view */
+    height: 100vw; /* Maintain aspect ratio */
+    border-radius: 50%; /* Makes it a circle */
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+    z-index: 10; /* Ensure it's above other content */
+    background-color: black; /* Ensuring black background for video container */
+}
+
+#videoContainer.small {
+    width: 100px; /* size of the small logo, increased as per request */
+    height: 100px;
+    top: 10px; /* distance from top */
+    right: 10px; /* distance from right */
+    left: auto; /* Override previous positioning */
+    transform: translate(0, 0); /* Reset translation */
+    border-radius: 50%; /* Maintain the circle shape */
+    border: 3px solid #8B0000; /* 3px dark red border */
+}
+#animationVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures that video is always covering the full viewport */
+    object-position: center;
+}
+@keyframes flashingText {
+    0%, 100% { color: white; }
+    50% { color: rgb(0, 217, 255); }
+  }
+#welcomeText {
+    animation: flashingText 2s infinite;
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 10px rgb(0, 217, 255), 0 0 20px rgb(0, 217, 255), 0 0 30px rgb(0, 217, 255);
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+  
+  header {
+    background: #B22222;
+    color: white;
+    padding-top:10px;
+    text-align: center;
+  }
+  
+  
+ .currentPage{
+    font-weight: bold;
+    color: #5f0c04;
+    background: white;
+    ;
+  }
+  nav a:hover{
+    background: #FFFFFF;
+    color: #B30F00;
+  }
+  
+  footer {
+    
+    bottom: 0;
+    width: 100%;
+    background: #B22222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  /* Style for the menu button - hidden by default */
+#menuButton {
+  display: none;
+  cursor: pointer;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+  /* Hide the list of navigation links */
+  nav ul {
+      display: none;
+  }
+
+  /* Show the hamburger menu button */
+  #menuButton {
+      display: block;
+      cursor: pointer;
+      color: white; 
+      background: #8a0d02; 
+      margin: 0;
+      padding: 10px 20px; 
+      text-align:left; 
+  }
+  nav ul {
+    background: white;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  
+    top: 100%; /* Aligns directly below the menu button */
+    left: 0;
+    margin-top: 0; /* Adjust if there is still a gap */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    z-index: 100; /* High z-index to ensure it's above other content */
+  
+  }
+  
+  nav ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    background:#8a0d02;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #8a0d02;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    display: block;
+    
+  }
+  #quizContainer{
+    margin-right:10px;
+    margin-left: 10px;
+    padding-bottom:30px;
+  }
+  #contentContainer {
+    display: flex; 
+     justify-content: space-between; 
+     flex-direction: column-reverse;
+  }
+  #timer {
+    border-radius: 5px; 
+    border:2px solid #5f0c04;
+    position: static; 
+    width:20vw ; 
+    height: auto; 
+    padding: 20px 20px;
+    margin-right: 0; 
+    color: #B22222;
+    font-weight: bolder;
+    text-align: center;
+
+  }
+  #optionsContainer button{
+    width: 80vw;
+  }
+  #questionText{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    text-shadow: #B30F00;
+    font-size: 30px;
+    color: #5f0c04;
+    padding-bottom: 20px;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+  }
+}
+/* Media query for large screens */
+@media screen and (min-width: 601px) {
+  nav ul {
+    list-style: none;
+    padding-top:10px;
+    padding-bottom: 10px;
+  }
+  
+  nav ul li {
+    display: inline;
+    width: 100vw;
+    
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    background:#8a0d02;
+    padding: 10px 40px 10px;
+  }
+  #quizContainer{
+    margin-right:50px;
+    margin-left: 50px;
+    padding-bottom:10vh;
+  }
+  #contentContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+}
+#timer {
+  text-align: center;
+  padding: 10px; 
+  background-color: white;
+  color: #B22222;
+  border: solid;
+  border-color: #5f0c04;
+  border-radius: 50%; 
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bolder;
+  width: 100px; 
+  height: 100px; 
+  position: absolute; 
+  right: 10px; 
+  top: 10px; 
+}
+#optionsContainer button{
+  width: 40vw;
+}
+  #questionText{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    text-shadow: #B30F00;
+    font-size: 40px;
+    color: #5f0c04;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+
+/* Style for the hero section */
+.hero {
+  background: white; 
+  color: #8a0d02;
+  padding: 50px 20px; /* Add padding for spacing */
+  text-align: center;
+}
+
+/* Style for the features section */
+.features {
+  background: #fff;
+  padding: 20px;
+  text-align: center; /* Center the text */
+}
+
+.features ul {
+  list-style-type: none; /* Remove default list bullets */
+  padding: 0; /* Remove default padding */
+}
+
+.features li {
+  padding: 10px 0; /* Add some vertical padding */
+}
+
+/* How It Works section with steps */
+.how-it-works {
+  background: #f5f5f5; /* Light gray background */
+  padding: 20px;
+  text-align: center; /* Center the text */
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column; /* Stack steps vertically */
+  align-items: center; /* Align items in the center */
+}
+
+.step {
+  margin: 20px 0; /* Add space between steps */
+}
+
+.step-number {
+  background: #B22222; /* Dark red background */
+  color: white;
+  padding: 10px; /* Add padding for the circle */
+  border-radius: 50%; /* Make it a circle */
+  display: inline-block; /* Allow width and height */
+  margin-bottom: 10px; /* Space below the number */
+}
+
+/* Image feature section */
+.image-feature {
+  display: flex;
+  justify-content: space-between; /* Space out the image and text */
+  align-items: center; /* Align them vertically */
+  padding: 20px;
+}
+
+.image-feature img {
+  display: block; /* Block-level element */
+  margin: 0 auto; /* Centers the block-level element in its container */
+  max-width: 100%; /* Ensures the image is responsive */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 700px) {
+  .image-feature {
+    flex-direction: column; /* Stack image and text on smaller screens */
+    align-items: flex-start; /* Align to the start */
+  }
+
+  .image-feature img {
+    max-width: 100%; /* Full width on smaller screens */
+    margin: 0 0 20px 0; 
+  }
+}
+section:not(:last-of-type) {
+  border-bottom: 2px solid #ccc; 
+  padding-bottom: 20px; 
+  margin-bottom: 20px; 
+}
+/* Style for both forms */
+#loginForm, #registerForm {
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 500px;
+  display: block;
+  box-sizing: border-box;
+}
+
+
+/* Style for form elements */
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  min-width: 430px;
+  max-width: 430px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+@media (max-width: 600px) {
+  form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  min-width: 300px;
+  max-width: 300px;
+  
+}
+}
+
+form input[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8a0d02;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #B22222;
+}
+
+/* Button to show registration form */
+#showRegisterForm {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: small;
+}
+
+#showRegisterForm:hover {
+  background-color: #555;
+}
+
+.password-container {
+  position: relative;
+  
+}
+
+.password-container input[type="password"] {
+  width: 100%;
+  
+  
+}
+
+.toggle-password {
+  position: absolute;
+  right: 30px; 
+  top: 50%;
+  transform: translateY(-50%); /* Center it vertically */
+  cursor: pointer;
+  
+}
+@media (max-width: 600px) {
+  .toggle-password {
+    left:280px;
+  }
+  
+}
+#quizzPage {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: left; 
+}
+
+#optionsContainer {
+font-size: large;
+flex:1;
+}
+
+
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8a0d02;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #B22222;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 11; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+.modal-content p {
+  line-height: 1.5;  
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.scores-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px; 
+}
+
+.table-container {
+  flex: 1;
+  min-width: 300px; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Collapses the border */
+  text-align: left; /* Align text to the left side of cell */
+  margin-top: 10px; /* Spacing from the header */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Light grey border */
+  padding: 8px; /* Padding inside cells */
+}
+
+th {
+  background-color: #f2f2f2; /* Light grey background for header */
+  color: #333; /* Dark text for contrast */
+}
+
+@media screen and (max-width: 600px) {
+  .scores-container {
+      flex-direction: column;
+  }
+}
