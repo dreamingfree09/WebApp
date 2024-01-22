@@ -1,8 +1,4 @@
 <?php include('class/action.php'); ?>
-<?php if (isset($_SESSION['userid']) && $_SESSION['usertype'] == "user") {
-} else {
-    header("location: login.php");
-} ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +40,7 @@
         </thead>
         <tbody>
         <?php
-        $sqlQuery = "SELECT res.id, us.name, res.correct_answer,res.wrong_answer,res.incomplete_answer,res.result_date  FROM `user_quiz_result` AS res INNER JOIN users AS us ON res.user_id = us.id WHERE res.user_id= " . $_SESSION['userid'] . "";
+        $sqlQuery = "SELECT res.id, us.name, res.correct_answer,res.wrong_answer,res.incomplete_answer,res.result_date  FROM `user_quiz_result` AS res INNER JOIN users AS us ON res.user_id = us.id";
         $resultSet = mysqli_query($dbConnect, $sqlQuery);
         $datas = mysqli_fetch_all($resultSet, MYSQLI_ASSOC);
         ?>
