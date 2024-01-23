@@ -1,9 +1,11 @@
 <?php
 // db_connect.php
 
+
 // Database connection
-$servername = "localhost";
+$servername = "localhost:3307";
 $username = "root";
 $password = "";
-$dbname = "quizSystem";
+$dbname = "quiz_database";
+
 ?>
