@@ -1,3 +1,8 @@
+<?php include('class/action.php'); ?>
+<?php if (isset($_SESSION['userid']) && $_SESSION['usertype'] == "user") {
+} else {
+    header("location: login.php");
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +14,24 @@
     />
     <meta name="keywords" content="football, quiz, history"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="../css/home-style.css"/>
+    <link rel="stylesheet" href="/css/home-style.css"/>
 </head>
 <body>
 <header>
     <h1>Football Quiz!</h1>
     <nav>
         <ul>
-            <li><a href="../Home-index.html">Home</a></li>
-            <li><a href="./Quiz.html">Take the Quiz</a></li>
-            <li><a href="./Scoreboard.html">View the Scoreboard</a></li>
-            <li><a href="./Login.html">Log In</a></li>
-            <li><a href="./Register.html">Register</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="quiz.php">Take the Quiz</a></li>
+            <li>
+                <a href="scoreboard.php">View the Scoreboard</a>
+            </li>
+            <?php if (isset($_SESSION['userid']) && $_SESSION['usertype'] == "user") { ?>
+                <li><a href="quiz.php?logoutUser=true">LogOut</a></li>
+            <?php } else { ?>
+                <li><a href="login.php">Log In</a></li>
+                <li><a href="register.php">Register</a></li>
+            <?php } ?>
         </ul>
     </nav>
 </header>
@@ -41,6 +52,6 @@
 <footer>
     <p>© <span id="currentYear"></span> Football Quiz</p>
 </footer>
-<script src="../js/quiz.js"></script>
+<script src="/js/quiz.js"></script>
 </body>
 </html>
